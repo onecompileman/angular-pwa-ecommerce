@@ -1,0 +1,462 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "PWA-Ecommerce Angular",
+    "version" : "1.0.0",
+    "title" : "Simple Ecommerce API",
+    "contact" : {
+      "email" : "stephen.vinuya@gmail.com"
+    },
+    "license" : {
+      "name" : "onecompileman",
+      "url" : "http://onecompileman.com"
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/Onecompileman5/pwa-ecommerce/1.0.0",
+  "tags" : [ {
+    "name" : "products",
+    "description" : "Products in the ecommerce site"
+  }, {
+    "name" : "categories",
+    "description" : "Categories of each product"
+  }, {
+    "name" : "orders",
+    "description" : "Orders of each user"
+  }, {
+    "name" : "users",
+    "description" : "User of the system"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/products/{id}" : {
+      "get" : {
+        "tags" : [ "products" ],
+        "summary" : "get product by id",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "return a product",
+            "schema" : {
+              "$ref" : "#/definitions/product.Product"
+            }
+          }
+        },
+        "x-method-name" : "getById"
+      },
+      "put" : {
+        "tags" : [ "products" ],
+        "summary" : "update a product by id",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "in" : "body",
+          "name" : "product",
+          "description" : "Product to add",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/product.Product"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "returns the updated product",
+            "schema" : {
+              "$ref" : "#/definitions/product.Product"
+            }
+          }
+        },
+        "x-method-name" : "update"
+      },
+      "delete" : {
+        "tags" : [ "products" ],
+        "summary" : "get a product by id",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "delete a product"
+          }
+        },
+        "x-method-name" : "destroy"
+      }
+    },
+    "/products" : {
+      "get" : {
+        "tags" : [ "products" ],
+        "summary" : "get all products",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "returns all product",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/product.Product"
+              }
+            }
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        },
+        "x-method-name" : "getAll"
+      },
+      "post" : {
+        "tags" : [ "products" ],
+        "summary" : "adds a product",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "product",
+          "description" : "Product to add",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/product.Product"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "item created",
+            "schema" : {
+              "$ref" : "#/definitions/product.Product"
+            }
+          }
+        },
+        "x-method-name" : "store"
+      }
+    },
+    "/categories/{id}" : {
+      "get" : {
+        "tags" : [ "categories" ],
+        "summary" : "get category by id",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "return a category",
+            "schema" : {
+              "$ref" : "#/definitions/category.Category"
+            }
+          }
+        },
+        "x-method-name" : "getById"
+      },
+      "put" : {
+        "tags" : [ "categories" ],
+        "summary" : "update a category by id",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "in" : "body",
+          "name" : "category",
+          "description" : "Product to add",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/category.Category"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "returns the updated category",
+            "schema" : {
+              "$ref" : "#/definitions/category.Category"
+            }
+          }
+        },
+        "x-method-name" : "update"
+      },
+      "delete" : {
+        "tags" : [ "categories" ],
+        "summary" : "get a product by id",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "delete a category"
+          }
+        },
+        "x-method-name" : "destroy,"
+      }
+    },
+    "/categories" : {
+      "get" : {
+        "tags" : [ "categories" ],
+        "summary" : "get all categories",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "returns all categories",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/category.Category"
+              }
+            }
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        },
+        "x-method-name" : "getAll"
+      },
+      "post" : {
+        "tags" : [ "categories" ],
+        "summary" : "adds a category",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "category",
+          "description" : "Category to add",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/category.Category"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "item created",
+            "schema" : {
+              "$ref" : "#/definitions/category.Category"
+            }
+          }
+        },
+        "x-method-name" : "store"
+      }
+    },
+    "/orders/{id}" : {
+      "get" : {
+        "tags" : [ "orders" ],
+        "summary" : "get order by id",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "return a order",
+            "schema" : {
+              "$ref" : "#/definitions/order.Order"
+            }
+          }
+        },
+        "x-method-name" : "getById"
+      },
+      "put" : {
+        "tags" : [ "orders" ],
+        "summary" : "update a orders by id",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "in" : "body",
+          "name" : "order",
+          "description" : "Order to add",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/order.Order"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "returns the updated order",
+            "schema" : {
+              "$ref" : "#/definitions/order.Order"
+            }
+          }
+        },
+        "x-method-name" : "update"
+      },
+      "delete" : {
+        "tags" : [ "orders" ],
+        "summary" : "get a order by id",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "delete an order"
+          }
+        },
+        "x-method-name" : "destroy"
+      }
+    },
+    "/orders" : {
+      "get" : {
+        "tags" : [ "orders" ],
+        "summary" : "get all order",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "returns all order",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/order.Order"
+              }
+            }
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        },
+        "x-method-name" : "getAll"
+      },
+      "post" : {
+        "tags" : [ "orders" ],
+        "summary" : "adds an order",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "order",
+          "description" : "Order to add",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/order.Order"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "item created",
+            "schema" : {
+              "$ref" : "#/definitions/order.Order"
+            }
+          }
+        },
+        "x-method-name" : "store"
+      }
+    }
+  },
+  "definitions" : {
+    "product.Product" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "image_url" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "category_id" : {
+          "type" : "integer"
+        },
+        "created_at" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updated_at" : {
+          "type" : "string",
+          "format" : "date-time"
+        }
+      }
+    },
+    "category.Category" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "created_at" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "updated_at" : {
+          "type" : "string",
+          "format" : "date-time"
+        }
+      }
+    },
+    "order.Order" : {
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "date_ordered" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "user_id" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "order.OrderProduct" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "product_id" : {
+          "type" : "integer"
+        },
+        "order_id" : {
+          "type" : "integer"
+        },
+        "quantity" : {
+          "type" : "integer"
+        }
+      }
+    }
+  }
+}
