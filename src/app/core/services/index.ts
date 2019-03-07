@@ -1,7 +1,7 @@
-import { ProductService } from './/product.service';
-import { CategoryService } from './/category.service';
-import { OrderService } from './/order.service';
-import { OrderProductService } from './/order-product.service';
+import { ProductService } from './product/product.service';
+import { CategoryService } from './category/category.service';
+import { OrderService } from './order/order.service';
+import { OrderProductService } from './order/order-product.service';
 
 
 export const services: any[] = [
@@ -10,7 +10,7 @@ CategoryService ,
 OrderService ,
 OrderProductService ]; 
 
-export * from './/product.service';
-export * from './/category.service';
-export * from './/order.service';
-export * from './/order-product.service';
+export * from './product/product.service';
+export * from './category/category.service';
+export * from './order/order.service';
+export * from './order/order-product.service';
