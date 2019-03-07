@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { LoginComponent } from './login/login.component';
 import { ProductsComponent } from './products/products.component';
+import { CategoriesComponent } from './categories/categories.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,11 @@ const routes: Routes = [
       {
         path: 'products',
         component: ProductsComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'categories',
+        component: CategoriesComponent,
         pathMatch: 'full'
       }
     ]

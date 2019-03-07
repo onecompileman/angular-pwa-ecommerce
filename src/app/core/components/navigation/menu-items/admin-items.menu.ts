@@ -1,10 +1,10 @@
 export const AdminItems: any[] = [
     {
-        path: '',
+        path: '/admin/products',
         name: 'Products'
     },
     {
-        path: '',
+        path: '/admin/categories',
         name: 'Categories'
     },
     {

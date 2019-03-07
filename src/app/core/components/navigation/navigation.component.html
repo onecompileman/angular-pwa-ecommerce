@@ -8,8 +8,8 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
        
-        <li class="nav-item" *ngFor="let items of adminItems">
-          <a class="nav-link" href="#">{{ items.name }}</a>
+        <li class="nav-item" *ngFor="let item of adminItems">
+          <a class="nav-link" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ item.name }}</a>
         </li>
       
       </ul>

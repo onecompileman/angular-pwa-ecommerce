@@ -17,7 +17,7 @@ export class ProductsComponent implements OnInit {
   }
 
   addProduct() {
-    this.modalService.show(SaveProductComponent);
+    this.modalService.show(SaveProductComponent, {class: 'modal-lg'});
   }
 
 }

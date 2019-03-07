@@ -1,15 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { RouterModule } from '@angular/router';
+import { ConfirmationComponent } from './components/modals/confirmation/confirmation.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ConfirmationComponent],
   imports: [
     CommonModule,
-    ModalModule.forRoot()
-  ], 
+    ModalModule.forRoot(),
+    FormsModule,
+    RouterModule
+  ],
   exports: [
-    ModalModule
+    ModalModule,
+    FormsModule,
+    RouterModule,
+    ConfirmationComponent
   ]
 })
 export class SharedModule { }
