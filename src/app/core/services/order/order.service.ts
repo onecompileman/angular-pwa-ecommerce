@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Restangular } from 'ngx-restangular';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Order } from '../../../shared/models/order/order.model';
 
 
