@@ -1,0 +1,8 @@
+.carousel-image {
+    max-height: 250px;
+}
+
+.carousel-item {
+    justify-content: center;
+    display: flex;
+}

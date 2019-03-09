@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  promptEvent;
+
+  constructor(
+  ) { }
 
   ngOnInit() {
+    window.addEventListener('beforeinstallprompt', event => {
+      this.promptEvent = event;
+    });
   }
 
 }

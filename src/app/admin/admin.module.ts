@@ -12,7 +12,7 @@ import { SaveCategoryComponent } from './categories/save-category/save-category.
 
 @NgModule({
   declarations: [LoginComponent, AdminComponent, ProductsComponent, SaveProductComponent, CategoriesComponent, SaveCategoryComponent],
-  entryComponents: [SaveProductComponent],
+  entryComponents: [SaveProductComponent, SaveCategoryComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

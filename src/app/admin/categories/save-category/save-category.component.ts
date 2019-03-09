@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { CategoryStore } from 'src/app/core/stores/category.store';
+import { Category } from 'src/app/shared/models/category/category.model';
 
 @Component({
   selector: 'fmyp-save-category',
@@ -8,9 +10,22 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class SaveCategoryComponent implements OnInit {
 
-  constructor(public bsModalRef: BsModalRef) { }
+  category: Category = new Category();
 
-  ngOnInit() {
+  event: any;
+  title: string;
+
+  constructor(
+    public bsModalRef: BsModalRef,
+    private categoryStore: CategoryStore
+    ) { }
+
+  ngOnInit() {}
+
+  saveCategory() {
+    this.event(this.category).subscribe(res => {
+      this.bsModalRef.hide();
+    })
   }
 
 }

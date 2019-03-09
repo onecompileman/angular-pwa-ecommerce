@@ -14,6 +14,9 @@ import { RestangularModule } from 'ngx-restangular';
     CommonModule,
     SharedModule,
     RestangularModule.forRoot(RestangularConfigFactory)
+  ],
+  providers: [
+    ...fromServices.services
   ]
 })
 export class CoreModule {
@@ -23,5 +26,6 @@ export class CoreModule {
 }
 
 export function RestangularConfigFactory(RestangularProvider) {
+  RestangularProvider.setPlainByDefault(true);
   RestangularProvider.setBaseUrl(environment.api);
 }

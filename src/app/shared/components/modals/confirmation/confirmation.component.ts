@@ -10,13 +10,18 @@ export class ConfirmationComponent implements OnInit {
   
   message: string;
   action: any;
+  actionParam: any;
 
 
-  constructor(public bsModalRef: BsModalRef) {
-    this.message = bsModalRef.content.data.message;
-   }
+  constructor(public bsModalRef: BsModalRef) { }
 
   ngOnInit() {
+  }
+
+  confirm() {
+    this.action(this.actionParam).subscribe(res => {
+      this.bsModalRef.hide();
+    })
   }
 
 }
