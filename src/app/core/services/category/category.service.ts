@@ -5,7 +5,9 @@ import { Observable } from 'rxjs';
 import { Category } from '../../../shared/models/category/category.model';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CategoryService {
     
   constructor(private restangular: Restangular) {}

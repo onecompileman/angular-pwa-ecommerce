@@ -1,7 +1,7 @@
 export const UserItems: any[] = [
     {
-        path: '',
-        name: 'Products'
+        path: '/user/home',
+        name: 'Home'
     },
     {
         path: '',

@@ -4,8 +4,9 @@ import { Restangular } from 'ngx-restangular';
 import { Observable } from 'rxjs';
 import { Order } from '../../../shared/models/order/order.model';
 
-
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class OrderService {
     
   constructor(private restangular: Restangular) {}

@@ -4,8 +4,9 @@ import { Restangular } from 'ngx-restangular';
 import { Observable } from 'rxjs';
 import { Product } from '../../../shared/models/product/product.model';
 
-
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductService {
     
   constructor(private restangular: Restangular) {}

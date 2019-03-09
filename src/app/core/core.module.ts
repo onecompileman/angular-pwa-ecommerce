@@ -9,7 +9,7 @@ import { RestangularModule } from 'ngx-restangular';
 
 @NgModule({
   declarations: [NavigationComponent],
-  exports: [NavigationComponent, ...fromServices.services],
+  exports: [NavigationComponent],
   imports: [
     CommonModule,
     SharedModule,
